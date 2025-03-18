@@ -5,11 +5,11 @@ main()
 {
 	
 	
-//		Um hotel cobra R$ 60.00 a di·ria e mais uma taxa de serviÁos. Construa um algoritmo que
-//		mostre o nome e a conta de um cliente, tendo como base as seguintes taxas de serviÁos È:
-//		R$ 5.50 por di·ria, se o n˙mero de di·rias for maior que 5;
-//		R$ 7.00 por di·ria, se o n˙mero de di·rias for igual a 5;
-//		R$ 9.00 por di·ria, se o n˙mero de di·rias for menor que 5.	
+//		Um hotel cobra R$ 60.00 a di√°ria e mais uma taxa de servi√ßos. Construa um algoritmo que
+//		mostre o nome e a conta de um cliente, tendo como base as seguintes taxas de servi√ßos √©:
+//		R$ 5.50 por di√°ria, se o n√∫mero de di√°rias for maior que 5;
+//		R$ 7.00 por di√°ria, se o n√∫mero de di√°rias for igual a 5;
+//		R$ 9.00 por di√°ria, se o n√∫mero de di√°rias for menor que 5.	
 	setlocale(LC_ALL, "Portuguese");
 	
 	//variaveis 
@@ -20,11 +20,11 @@ main()
 	
 	//entrada
 	
-	cout << "Ol·, para continuarmos, digite seu nome: ";
+	cout << "Ol√°, para continuarmos, digite seu nome: ";
 	cin >> nome;
 	
 	
-	cout <<"Quantas di·rias deseja reservar? ";
+	cout <<"Quantas di√°rias deseja reservar? ";
 	cin >> diarias;
 	
 	//processo
@@ -42,11 +42,11 @@ main()
 	valortotal = (60.00 * diarias) + (taxa * diarias);
 	//saida
 	
-    cout << "\nOk, " << nome <<"Sua reserva ficou assim: "
+    cout << "\nOk, " << nome <<" Sua reserva ficou assim: "
 	<< endl;
-    cout << "N˙mero de di·rias: " << diarias 
+    cout << "N√∫mero de di√°rias: " << diarias 
 	<< endl;
-    cout << "Taxa adicional por di·ria: R$ " << taxa 
+    cout << "Taxa adicional por di√°ria: R$ " << taxa 
 	<< endl;
     cout << "Valor total a pagar: R$ " << valortotal 
 	<< endl;
