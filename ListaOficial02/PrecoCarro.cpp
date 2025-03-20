@@ -43,27 +43,27 @@ main()
 
     //processo
     valorcarro = valorinicial;
-    if (vidro == 'S') {
+    if (vidro == 'S' || vidro =='s') {
         valorcarro += 500.00;
         adicionais += "Vidro elétrico: R$ 500,00\n";
     }
-    if (ar == 'S') {
+    if (ar == 'S' || ar =='s') {
         valorcarro += 2000.00;
         adicionais += "Ar condicionado: R$ 2000,00\n";
     }
-    if (trava == 'S') {
+    if (trava == 'S' || trava =='s') {
         valorcarro += 500.00;
         adicionais += "Trava central e Alarme: R$ 500,00\n";
     }
-    if (pintura == 'S') {
+    if (pintura == 'S' || pintura =='s') {
         valorcarro += 1000.00;
         adicionais += "Pintura metálica: R$ 1000,00\n";
     }
-    if (direcao == 'S') {
+    if (direcao == 'S' || direcao =='s') {
         valorcarro += 2500.00;
         adicionais += "Direção hidráulica: R$ 2500,00\n";
     }
-    if (pagamento == 'S') { 
+    if (pagamento == 'S' || pagamento =='s') { 
         desconto = valorcarro * 0.05;
         valorcarro -= desconto;
     }
