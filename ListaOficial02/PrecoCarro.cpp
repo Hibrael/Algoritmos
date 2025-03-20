@@ -20,13 +20,14 @@ main()
     //variaveis
 
     char vidro, ar, trava, pintura, direcao, pagamento;
-    float valorcarro, valorcarrofinal;
+    float valorcarro, desconto, valorinicial;
+    string adicionais; 
 
     //entrada
     cout <<"A seguir você terá que responder algumas perguntas referentes aos possíveis adicionais do carro, \npara o bom funcionamento do sistema favor responder SOMENTE com 'S' ou 'N' a TODAS as perguntas "
     <<endl;
     cout <<"Qual o valor inicial do carro? ";
-    cin >>valorcarro;
+    cin >>valorinicial;
     cout <<"O veículo possui vidro elétrico? S/N ";
     cin >>vidro;
     cout <<"O veículo possui ar condicionado? S/N ";
@@ -38,12 +39,47 @@ main()
     cout <<"O veículo possui direção hidráulica? S/N ";
     cin >>direcao;
     cout <<"O valor final do veículo sofre um abate de 5% no pagamento em dinheiro, gostaria de pagar a vista? S/N  ";
-    cin >>direcao;
+    cin >>pagamento;
 
     //processo
-    if (vidro == 'S'){
-
+    valorcarro = valorinicial;
+    if (vidro == 'S') {
+        valorcarro += 500.00;
+        adicionais += "Vidro elétrico: R$ 500,00\n";
+    }
+    if (ar == 'S') {
+        valorcarro += 2000.00;
+        adicionais += "Ar condicionado: R$ 2000,00\n";
+    }
+    if (trava == 'S') {
+        valorcarro += 500.00;
+        adicionais += "Trava central e Alarme: R$ 500,00\n";
+    }
+    if (pintura == 'S') {
+        valorcarro += 1000.00;
+        adicionais += "Pintura metálica: R$ 1000,00\n";
+    }
+    if (direcao == 'S') {
+        valorcarro += 2500.00;
+        adicionais += "Direção hidráulica: R$ 2500,00\n";
+    }
+    if (pagamento == 'S') { 
+        desconto = valorcarro * 0.05;
+        valorcarro -= desconto;
     }
 
+    //saida
+    cout <<"======================================"
+    <<endl;
+    cout <<"Valor do carro (inicial): R$ " <<valorinicial
+    <<endl;
+    cout <<"Adicionais e descontos: \n";
+    cout << adicionais
+    <<endl;
+    if (pagamento == 'S'){
+        cout <<"Desconto de 5% para pagamento a vista: R$ " <<desconto;
+    }
 
+    cout <<"\n======================================";
+    cout <<"\nO valor final do carro é: R$ " <<valorcarro;
 }
