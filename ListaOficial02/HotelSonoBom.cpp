@@ -5,7 +5,7 @@ main(){
 
     setlocale(LC_ALL, "Portuguese");
 
-    //variaveis 
+    /*=======================VARIÁVEIS=======================*/
     // Faça um programa para o Hotel Sono Bom. O algoritmo deve ler os seguintes dados:
     // a) O número da reserva
     // b) O nome do responsável pela reserva.
@@ -15,12 +15,12 @@ main(){
     // f) O valor consumido no frigobar.
     // g) Número de serviços de massagens utilizadas pelo cliente.
     // h) O valor do consumo de bar.
-    int numeroreserva, hospedes, massagens, tipoquarto, diarias;
+    int numeroreserva, hospedes, massagens, tipoquarto, qtddiarias;
     string nome;
-    float valorquarto, valorfamilia, valorfrigobar, valormassagens, valorbar, adicionalhospedes;
+    float valorquarto, valorfamilia, valorfrigobar, valormassagens, valorbar, valormassagens, adicionalhospedes, valorfinal, valortotaldiarias, valortotalservicos, valortotal;
 
 
-    //entrada
+    /*=======================ENTRADA=======================*/
 
     cout<<"==========Olá! Bem vindo ao Hotel Sono Bom===========" <<endl;
 
@@ -39,7 +39,7 @@ main(){
     cin>>tipoquarto; 
 
     cout<<"Digite o número de diárias: ";
-    cin>>diarias;
+    cin>>qtddiarias;
 
     cout<<"Valor consumido no frigobar: R$";
     cin>>valorfrigobar;
@@ -50,7 +50,7 @@ main(){
     cout<<"Valor de consumido no bar: ";
     cin>>valorbar;
 
-    //processo
+    /*=======================PROCESSO=======================*/
     
     //IF TIPO QUARTO
     if (tipoquarto == 1)
@@ -67,16 +67,53 @@ main(){
     }
     
     
-    
-
-
-
-
 
     //IF QUANTIDADE HOSPEDES
     if (hospedes >2 || hospedes<5)
     {
-        adicionalhospedes = 20,00;
+        adicionalhospedes = qtddiarias * 20.00;
+    }else if (hospedes >=5)
+    {
+        adicionalhospedes = qtddiarias * 40.00;
+    }
+    
+    //IF SERVIÇO MASSAGEM
+    if (massagens >0 && massagens <=3)
+    {
+        valormassagens = massagens*80.00;
+    }else if(massagens>3){
+        valormassagens = massagens*65.00;
+    }
+
+    //ADIÇÃO DE TAXA AOS VALORES CONSUMIDOS NO BAR E FRIGOBAR.
+    if (valorfrigobar>0)
+    {
+        valorfrigobar += 12.00;
+    }
+    if (valorbar>0)
+    {
+        valorbar += (valorbar*0.1);
+    }
+
+    /*==============SOMA FINAL DOS VALORES==============*/
+
+
+    //VALOR FINAL DIARIAS 
+    valortotaldiarias = (valorquarto*qtddiarias) + adicionalhospedes;   //o valor total das diarias corresponde ao valor do quarto multiplicado a 
+                                                                        //quantidade de dias que o usuario ficou hospedado acrescido do valor 
+                                                                        //adicional em função do número de hóspedes 
+    
+    //SOMA SERVIÇOS
+    valortotalservicos = valormassagens + valorfrigobar + valorbar;
+
+    //SOMA FINAL
+    valortotal=valortotaldiarias + valortotalservicos;
+
+    //CALCULO DA TAXA ISS
+
+    if (qtddiarias>5)
+    {
+        /* code */
     }
     
 }
