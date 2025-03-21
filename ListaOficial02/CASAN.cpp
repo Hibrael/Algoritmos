@@ -21,26 +21,35 @@ main()
     //PROCESSO
 
     // Consumo Valor
-    // Até 10 m3 R$ 2,99
+    // Até 10 m3 R$ 2,99 
     // De 11 a 25 m3 R$ 5,48
     // De 26 a 50 m3 R$ 7,69
     // Acima de 50 m3 R$ 9,22
 
-    if (m3consumidos>10 && m3consumidos<=25)
+    if (m3consumidos<=10)
+    {
+        valortotalm3 = m3consumidos *2.99;
+
+    }else if (m3consumidos>10 && m3consumidos<=25)
     {
         m3taxa1 = m3consumidos - 10;
         valor1 = m3taxa1 * 5.48; //valor de m3 cobrados com a taxa de 5.48
         valortotalm3 = 10 *2.99 + valor1; 
 
-    }else if (m3consumidos<25 && m3consumidos<=25)
+    }else if (m3consumidos>25 && m3consumidos<=50)
     {
         m3taxa1 = m3consumidos - 10;
+        m3taxa2 = m3consumidos - 25; 
         valor1 = m3taxa1 * 5.48; //valor de m3 cobrados com a taxa de 5.48
-
-
+        valor2 = m3taxa2 + 7.69; //valor de m3 cobrados com a taxa de 7.69
+        valortotalm3 = (10*2.99) + valor1 + valor2; 
+    }else{
         
-        valortotalm3 = 10 *2.99 + valor1; 
-      
+        m3taxa1 = m3consumidos - 10;
+        m3taxa2 = m3consumidos - 25; 
+        valor1 = m3taxa1 * 5.48; //valor de m3 cobrados com a taxa de 5.48
+        valor2 = m3taxa2 + 7.69; //valor de m3 cobrados com a taxa de 7.69
+        valortotalm3 = (10*2.99) + valor1 + valor2; 
 
     }
 
